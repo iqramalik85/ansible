@@ -1,0 +1,13 @@
+ inventory---
+- name: Transfer and execute shell script
+  hosts: myhosts
+  become: yes  # If you need elevated privileges (sudo)
+  tasks:
+    - name: Transfer Script
+      copy:
+        src: /home/iqra/Desktop/mkdir.sh 
+        dest: /home/ayra/Desktop/test.sh
+        mode: '0755'
+
+    - name: Execute Script
+      shell: /home/ayra/Desktop/test.sh
