@@ -1,7 +1,7 @@
  inventory---
 - name: Transfer and execute shell script
   hosts: myhosts
-  become: yes  # If you need elevated privileges (sudo)
+  become: yes
   tasks:
     - name: Transfer Script
       copy:
