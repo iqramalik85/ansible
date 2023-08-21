@@ -1,0 +1,16 @@
+---
+- name: Install apache
+  hosts: ubuntu_hosts
+  become: yes
+  tasks:
+    - name: install apache on ubuntu
+      when: " 'ubuntu' in inventory_hostname"
+      apt:
+        name: apache2
+        update_cache: yes
+
+    - name: install apache on centos
+      when: "'centos' in inventory_hostname"
+      yum:
+       name: httpd
+       state: present
